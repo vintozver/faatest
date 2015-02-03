@@ -27,7 +27,7 @@
 		{% for _answer in answers %}
 		<div>
 		{% if _answer.AnswerID == answer.AnswerID %}
-		<img {{ {'src': {'netloc': '', 'path': '/small_initial.gif'}|url}|xmlattr }} alt="&gt;" />
+		<img {{ {'src': {'netloc': '', 'path': '/small_initial.png'}|url}|xmlattr }} alt="&gt;" />
 		{% endif %}
 		{% if report_single and answer != None and _answer.IsCorrect %}<strong>{% endif %}
 		{{ _answer.AnswerText }}

@@ -21,15 +21,15 @@
 		{% if question_state != None %}
 			{% if report_single %}
 				{% if question_state['correct'] %}
-				<img {{ {'src': {'netloc': '', 'path': '/small_correct.gif'}|url}|xmlattr }} alt="+" />
+				<img {{ {'src': {'netloc': '', 'path': '/small_correct.png'}|url}|xmlattr }} alt="+" />
 				{% else %}
-				<img {{ {'src': {'netloc': '', 'path': '/small_incorrect.gif'}|url}|xmlattr }} alt="-" />
+				<img {{ {'src': {'netloc': '', 'path': '/small_incorrect.png'}|url}|xmlattr }} alt="-" />
 				{% endif %}
 			{% else %}
-			<img {{ {'src': {'netloc': '', 'path': '/small_answered.gif'}|url}|xmlattr }} alt="A" />
+			<img {{ {'src': {'netloc': '', 'path': '/small_answered.png'}|url}|xmlattr }} alt="A" />
 			{% endif %}
 		{% else %}
-		<img {{ {'src': {'netloc': '', 'path': '/small_initial.gif'}|url}|xmlattr }} alt="NA" />
+		<img {{ {'src': {'netloc': '', 'path': '/small_initial.png'}|url}|xmlattr }} alt="NA" />
 		{% endif %}
 	</td>
 	</tr>

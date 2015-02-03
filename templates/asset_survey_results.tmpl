@@ -23,12 +23,12 @@
 	<td class="state">
 	{% if result_item.has_key('answer') %}
 	{% if result_item['correct'] %}
-	<img {{ {'src': {'netloc': '', 'path': '/small_correct.gif'}|url}|xmlattr }} alt="+" />
+	<img {{ {'src': {'netloc': '', 'path': '/small_correct.png'}|url}|xmlattr }} alt="+" />
 	{% else %}
-	<img {{ {'src': {'netloc': '', 'path': '/small_incorrect.gif'}|url}|xmlattr }} alt="-" />
+	<img {{ {'src': {'netloc': '', 'path': '/small_incorrect.png'}|url}|xmlattr }} alt="-" />
 	{% endif %}
 	{% else %}
-	<img {{ {'src': {'netloc': '', 'path': '/small_initial.gif'}|url}|xmlattr }} alt="NA" />
+	<img {{ {'src': {'netloc': '', 'path': '/small_initial.png'}|url}|xmlattr }} alt="NA" />
 	{% endif %}
 	</td>
 	</tr>
