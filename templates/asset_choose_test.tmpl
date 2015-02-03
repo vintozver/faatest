@@ -1,0 +1,16 @@
+<form>
+<h3>Group</h3>
+<p>{{ group.GroupName }} ({{ group.GroupAbbr }})</p>
+<h3>Choose test</h3>
+<table border="0" cellpadding="0" cellspacing="0" id="ground_school_choose_test">
+<tr><th class="title_header">Test title</th><th class="abbrev_header">Abbrev</th></tr>
+{% for test in tests %}
+<tr><td class="title_row"><input type="radio" name="ground_school_input_TestID" {{ {'value': test.TestID}|xmlattr }} /> {{ test.TestName }}</td><td class="abbrev_row">{{ test.TestAbbr }}</td></tr>
+{% endfor %}
+</table>
+<p>
+	<input type="button" value="&lt; Choose group" onclick="javascript:ground_school.on_choice_reset();" />
+	<input type="button" value="Next &gt;" onclick="javascript:ground_school.on_choose_test();" />
+</p>
+</form>
+

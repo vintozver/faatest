@@ -1,0 +1,166 @@
+#ground_school_container {
+	width: 100%;
+}
+
+div#ground_school_notification {
+	position: relative;
+	display: none;
+}
+div#ground_school_notification div {
+	position: absolute;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+div#ground_school_notification div div.message {
+	text-align: center;
+	font-size: x-large;
+	background-color: white;
+	color: black;
+}
+
+table#ground_school_choose_group {
+	margin-top: 1em;
+	width: 100%;
+}
+table#ground_school_choose_group th {
+	text-align: left;
+}
+table#ground_school_choose_group th.title_header, table#ground_school_choose_group td.title_row {
+	width: 80%;
+}
+table#ground_school_choose_group th.abbrev_header, table#ground_school_choose_group td.abbrev_row {
+	width: 20%;
+}
+table#ground_school_choose_test {
+	margin-top: 1em;
+	width: 100%;
+}
+table#ground_school_choose_test th.title_header, table#ground_school_choose_test th.abbrev_header {
+	text-align: left;
+}
+table#ground_school_choose_test th.title_header, table#ground_school_choose_test td.title_row {
+	width: 80%;
+}
+table#ground_school_choose_test th.abbrev_header, table#ground_school_choose_test td.abbrev_row {
+	width: 20%;
+}
+
+div#ground_school_ready_choice {
+}
+div#ground_school_ready_choice h2 {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+div#ground_school_ready_choice div.settings_survey, div#ground_school_ready_choice div.settings_real {
+	padding-bottom: 1em;
+}
+div#ground_school_ready_choice div.settings_survey input[type="text"] {
+	width: 1cm;
+	border: 1px solid #afafaf;
+}
+
+div#ground_school_survey_questions {
+	height: 10cm;
+	overflow: auto;
+}
+div#ground_school_survey_questions table {
+	width: 100%;
+}
+div#ground_school_survey_questions table th {
+	text-align: left;
+}
+div#ground_school_survey_questions table th.no, div#ground_school_survey_questions table td.no {
+	width: 2em; padding-right: 2px;
+}
+div#ground_school_survey_questions table th.question, div#ground_school_survey_questions table td.question {
+}
+div#ground_school_survey_questions table th.state, div#ground_school_survey_questions table td.state {
+	width: 2em; padding-left: 2px;
+}
+div#ground_school_survey_questions ol {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style-position: inside;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+div#ground_school_survey_questions ol li {
+}
+
+div#ground_school_survey_results {
+	height: 100%;
+	overflow: auto;
+}
+div#ground_school_survey_results table {
+	width: 100%;
+}
+div#ground_school_survey_results table th {
+	text-align: left;
+}
+div#ground_school_survey_results table th.no, div#ground_school_survey_results table td.no {
+	width: 2em; padding-right: 2px;
+}
+div#ground_school_survey_results table th.question, div#ground_school_survey_results table td.question {
+}
+div#ground_school_survey_results table th.state, div#ground_school_survey_results table td.state {
+	width: 2em; padding-left: 2px;
+}
+div#ground_school_survey_results ol {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style-position: inside;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+div#ground_school_survey_results ol li {
+}
+
+div#ground_school_survey_header {
+}
+div#ground_school_survey_header table {
+}
+div#ground_school_survey_header table th {
+	text-align: left;
+}
+div#ground_school_survey_header table th, div#ground_school_survey_header table td {
+	padding-right: 1cm;
+}
+
+div#ground_school_survey_question {
+	width: 100%;
+	margin-top: 1cm;
+	margin-bottom: 1cm;
+}
+div#ground_school_survey_question table {
+	width: 100%;
+}
+div#ground_school_survey_question table td.question_text, #ground_school_survey_question table td.answers_texts {
+	width: 50%;
+}
+div#ground_school_survey_question ol {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style-position: inside;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+div#ground_school_survey_question ol li {
+}
+
+div#ground_school_survey_question div.help {
+}
+div#ground_school_survey_question div.help div.contents {
+	display: none;
+}
+div#ground_school_survey_question div.help span.show {
+	display: inline;
+}
+div#ground_school_survey_question div.help span.hide {
+	display: none;
+}
+div#ground_school_survey_question div.help span.show, div#ground_school_survey_question div.help span.hide {
+	font-weight: bolder;
+	cursor: pointer;
+}
+

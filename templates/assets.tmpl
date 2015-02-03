@@ -1,0 +1,14 @@
+#encoding UTF-8
+#import templates.base
+#extends templates.base.base
+
+#import config
+
+#def correct_notification()
+<img src=#echo $html_attr($url(netloc=$config.main.domain_static, path='/ground-school/big_correct.gif'))# alt="Correct!" />
+#end def
+
+#def incorrect_notification()
+<img src=#echo $html_attr($url(netloc=$config.main.domain_static, path='/ground-school/big_incorrect.gif'))# alt="Incorrect!" />
+#end def
+

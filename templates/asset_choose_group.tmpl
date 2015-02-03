@@ -1,0 +1,11 @@
+<form>
+<h2>Choose group</h2>
+<table border="0" cellpadding="0" cellspacing="0" id="ground_school_choose_group">
+<tr><th class="title_header">Group title</th><th class="abbrev_header">Abbrev</th></tr>
+{% for group in groups %}
+<tr><td class="title_row"><input type="radio" name="ground_school_input_GroupID" {{ {'value': group.GroupID}|xmlattr }} /> {{ group.GroupName }}</td><td class="abbrev_row">{{ group.GroupAbbr }}</td></tr>
+{% endfor %}
+</table>
+<p><input type="button" value="Next" onclick="javascript:ground_school.on_choose_group();" /></p>
+</form>
+

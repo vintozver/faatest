@@ -1,0 +1,31 @@
+<form>
+<div>
+	<h3>Group</h3>
+	<p>{{ group.GroupName }} ({{ group.GroupAbbr}})</p>
+	<h3>Test</h3>
+	<p>{{ test.TestName }} ({{ test.TestAbbr}})</p>
+</div>
+<p>
+	<input type="button" value="&lt;&lt; Choose group" onclick="javascript:ground_school.on_choice_reset();" />
+	<input type="button" value="&lt; Choose test" onclick="javascript:ground_school.on_choose_group({{ group.GroupID|json }});" />
+</p>
+<div id="ground_school_ready_choice">
+	<h2>Choose mode</h2>
+	<div class="settings_survey">
+		<h4>Practice test</h4>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr><td>Questions</td><td><input type="text" name="ground_school_ready_count" value="50" /></td></tr>
+		<tr><td>Mix questions</td><td><input type="checkbox" name="ground_school_ready_mixquestions" value="1" /></td></tr>
+		<tr><td>Mix answers</td><td><input type="checkbox" name="ground_school_ready_mixanswers" value="1" /></td></tr>
+		<tr><td>Report answers</td><td><input type="checkbox" name="ground_school_ready_reportsingle" value="1" /></td></tr>
+		</table>
+		<p><input type="button" value="Practice &gt;" onclick="javascript:ground_school.on_practice_run();" /></p>
+	</div>
+	<div class="settings_real">
+		<h4>Real test</h4>
+		<p>Real test include 50 questions which are pulled from the pool.<br />Answers are mixed, correct/incorrect answers are not reported. No help is available. You will receive final report after test is finished. <!-- Time - 45 minutes. After it, the test will be finished automatically. --></p>
+		<p><input type="button" value="Real &gt;" onclick="javascript:ground_school.on_real_run();" /></p>
+	</div>
+</div>
+</form>
+

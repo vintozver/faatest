@@ -1,0 +1,40 @@
+<div id="ground_school_survey_header">
+	{% if mode %}
+	<h2>Real test. Be attentive!</h2>
+	{% else %}
+	<h2>Practice mode</h2>
+	{% endif %}
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr><th>Group</th><th>Test</th></tr>
+	<tr><td>{{ group.GroupName }} ({{ group.GroupAbbr }})</td><td>{{ test.TestName }} ({{ test.TestAbbr }})</td></tr>
+	</table>
+</div>
+<div id="ground_school_survey_results">
+	<h2>Questions list</h2>
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr><th class="no">No</th><th class="question">Question</th><th class="state">State</th></tr>
+	{% for result_item in results %}
+	<tr>
+	<td class="no">{{ loop.index }}</td>
+	<td class="question">
+		{{ result_item['question'] }}
+		{% if result_item.has_key('answer') %}<i>{{ result_item['answer'] }}</i>{% endif %}
+	</td>
+	<td class="state">
+	{% if result_item.has_key('answer') %}
+	{% if result_item['correct'] %}
+	<img {{ {'src': {'netloc': '', 'path': '/small_correct.gif'}|url}|xmlattr }} alt="+" />
+	{% else %}
+	<img {{ {'src': {'netloc': '', 'path': '/small_incorrect.gif'}|url}|xmlattr }} alt="-" />
+	{% endif %}
+	{% else %}
+	<img {{ {'src': {'netloc': '', 'path': '/small_initial.gif'}|url}|xmlattr }} alt="NA" />
+	{% endif %}
+	</td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+<div id="ground_school_survey_control">
+	<input type="button" value="Do it again!" onclick="javascript:ground_school.on_survey_close();" />
+</div>

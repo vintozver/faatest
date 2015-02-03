@@ -1,0 +1,70 @@
+<form>
+<div id="ground_school_survey_header">
+	{% if mode %}
+	<h2>Real test. Be attentive!</h2>
+	{% else %}
+	<h2>Practice mode</h2>
+	{% endif %}
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr><th>Group</th><th>Test</th></tr>
+	<tr><td>{{ group.GroupName }} ({{ group.GroupAbbr }})</td><td>{{ test.TestName }} ({{ test.TestAbbr }})</td></tr>
+	</table>
+</div>
+<div id="ground_school_survey_question">
+	<h2>Current question: {{ question_index }}</h2>
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="question_text">
+		<div>{{ question.QuestionText }}</div>
+		<p>
+		<input type="button" value="&lt; Prev" onclick="javascript:ground_school.on_survey_prev_question();" />
+		<input type="button" value="List" onclick="javascript:ground_school.on_survey_show_questions();" />
+		<input type="button" value="Next &gt;" onclick="javascript:ground_school.on_survey_next_question();" />
+		</p>
+	</td>
+	<td class="answers_texts">
+	{% if answer|default(None) %}
+		{% for _answer in answers %}
+		<div>
+		{% if _answer.AnswerID == answer.AnswerID %}
+		<img {{ {'src': {'netloc': '', 'path': '/small_initial.gif'}|url}|xmlattr }} alt="&gt;" />
+		{% endif %}
+		{% if report_single and answer != None and _answer.IsCorrect %}<strong>{% endif %}
+		{{ _answer.AnswerText }}
+		{% if report_single and answer != None and _answer.IsCorrect %}</strong>{% endif %}
+		</div>
+		{% endfor %}
+	{% else %}
+		{% for _answer in answers %}
+		<div>
+		<input type="radio" name="ground_school_input_AnswerID" {{ {'value': _answer.AnswerID}|xmlattr  }} />
+		{{ _answer.AnswerText }}
+		</div>
+		{% endfor %}
+	{% endif %}
+	{% if answer == None %}
+	<p><input type="button" value="Answer" onclick="javascript:ground_school.on_survey_answer_question();" /></p>
+	{% endif %}
+	</td>
+	</tr>
+	{% for image in images %}
+	<tr>
+	<td colspan="2">
+	<img alt="Question Image" {{ {'src': {'netloc': '', 'path': '/image.py', 'query': {'ID': image.ImageID}}|url}|xmlattr }} />
+	</td>
+	</tr>
+	{% endfor %}
+	</table>
+	{% if not mode and question.Explanation %}
+	<div class="help">
+	<span class="show" onclick="javascript:ground_school.on_survey_help_question_show();">Show help</span>
+	<span class="hide" onclick="javascript:ground_school.on_survey_help_question_hide();">Hide help</span>
+	<div class="contents">{{ question.Explanation }}</div>
+	</div>
+	{% endif %}
+</div>
+<div id="ground_school_survey_control">
+	<input type="button" value="Finish" onclick="javascript:ground_school.on_survey_finish();" />
+</div>
+</form>
+
