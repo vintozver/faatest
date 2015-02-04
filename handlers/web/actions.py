@@ -127,7 +127,7 @@ class Handler(_base):
 					raise HandlerError('Questions.QuestionID not found', QuestionID)
 				AnswerID = state_obj.questions_states.has_key(QuestionID) and state_obj.questions_states[QuestionID].get('answer') or None
 				if AnswerID != None:
-					answers_items = map(lambda answer_item: mod_GS.Answer.create_from_data(answer_item), question_item.get('Answers', []))
+					answers_items = filter(lambda answer_obj: answer_obj.AnswerID == AnswerID, map(lambda answer_item: mod_GS.Answer.create_from_data(answer_item), question_item.get('Answers', [])))
 					if answers_items:
 						answer_item = answers_items[0]
 					else:
